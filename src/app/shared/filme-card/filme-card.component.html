@@ -1,19 +1,21 @@
-<div class="filme-card">
-  <mat-card *ngFor="let filme of filmes">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>{{ filme.title }}</mat-card-title>
-        <mat-card-subtitle>{{ filme.vote_average }}</mat-card-subtitle>
-        <img
-          mat-card-lg-image
-          src="https://www.themoviedb.org/t/p/w220_and_h330_face{{
-            filme.backdrop_path
-          }}"
-        />
-      </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-content>
-      {{ filme.overview }}
-    </mat-card-content>
-  </mat-card>
-</div>
+<mat-card *ngFor="let filme of filmes" class="m-5">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>{{ filme.title }}</mat-card-title>
+      <mat-card-subtitle class="text-lg"
+        >{{ filme.vote_average }}
+        <mat-icon class="-my-1 amarelo">star</mat-icon>
+      </mat-card-subtitle>
+      <img
+        class="border-round-md"
+        mat-card-xg-image
+        src="https://www.themoviedb.org/t/p/w220_and_h330_face{{
+          filme.backdrop_path
+        }}"
+      />
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content class="p-2">
+    {{ filme.overview }}
+  </mat-card-content>
+</mat-card>

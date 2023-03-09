@@ -1,5 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~primeflex/primeflex.css';
+@import "~primeflex/primeflex.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.coluna {
+  column-count: 4;
+}
+
+mat-card {
+  min-width: 300px;
+}
+
+.roxo {
+  color: #333366;
+}
+
+mat-card-header {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+mat-card-content {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.amarelo {
+  color: #f5c518;
+}

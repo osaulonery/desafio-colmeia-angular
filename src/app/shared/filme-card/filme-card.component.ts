@@ -19,7 +19,7 @@ export class FilmeCardComponent implements OnInit {
   }
 
   pegarFilmes() {
-    this.service.getFilmesService().subscribe((res) => {
+    this.service.pegaFilmesPopularesService().subscribe((res) => {
       this.page = res;
       this.filmes = this.page.results as MovieDB[];
     });

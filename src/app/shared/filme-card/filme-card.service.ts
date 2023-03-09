@@ -2,7 +2,7 @@ import { _isTestEnvironment } from '@angular/cdk/platform';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { MovieDB, Page } from 'src/app/model/moviedb.model';
+import { Page } from 'src/app/model/moviedb.model';
 import { environment } from 'src/environment/environment';
 
 @Injectable({
@@ -18,7 +18,17 @@ export class FilmeCardService {
 
   constructor(private http: HttpClient) {}
 
-  getFilmesService(): Observable<Page> {
+  pegaFilmesPopularesService(): Observable<Page> {
     return this.http.get<Page>(this.url).pipe(map((retorno) => retorno));
+  }
+
+  buscaFilmeService(query: string): Observable<any> {
+    const url =
+      environment.buscaUrl +
+      environment.apiKey +
+      environment.idioma +
+      environment.query +
+      query;
+    return this.http.get(url);
   }
 }

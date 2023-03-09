@@ -1,7 +1,37 @@
-<mat-form-field class="buscador" appearance="outline">
-  <mat-label>Busque seu filme</mat-label>
-  <input matInput type="text" [(ngModel)]="value" />
-  <button matSuffix mat-icon-button>
-    <mat-icon>search</mat-icon>
-  </button>
-</mat-form-field>
+<div class="col-12 flex justify-content-center">
+  <mat-form-field class="buscador" appearance="outline">
+    <mat-label>Busque seu filme</mat-label>
+    <input matInput type="text" [(ngModel)]="busca" />
+    <button type="submit" mat-icon-button matSuffix (click)="buscaFilme()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<h3 class="flex justify-content-center my-4" *ngIf="resultadosBusca">
+  Resultados da Busca
+</h3>
+
+<div *ngIf="resultadosBusca" class="block coluna">
+  <mat-card *ngFor="let filme of resultadosBusca" class="m-5">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{ filme.title }}</mat-card-title>
+        <mat-card-subtitle class="text-lg"
+          >{{ filme.vote_average }}
+          <mat-icon class="-my-1 amarelo">star</mat-icon>
+        </mat-card-subtitle>
+        <img
+          class="border-round-md"
+          mat-card-xg-image
+          src="https://www.themoviedb.org/t/p/w220_and_h330_face{{
+            filme.backdrop_path
+          }}"
+        />
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content class="p-2">
+      {{ filme.overview }}
+    </mat-card-content>
+  </mat-card>
+</div>
