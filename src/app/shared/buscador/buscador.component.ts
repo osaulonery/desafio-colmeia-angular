@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./buscador.component.scss'],
 })
 export class BuscadorComponent {
-  value = '';
+  value: string = '';
 }

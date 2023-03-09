@@ -8,6 +8,7 @@ import { BuscadorComponent } from './shared/buscador/buscador.component';
 import { FilmeCardComponent } from './shared/filme-card/filme-card.component';
 import { HomeComponent } from './modules/home/home.component';
 
+import { HttpClientModule } from '@angular/common/http';
 //FORMS
 import { FormsModule } from '@angular/forms';
 
@@ -33,8 +34,9 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatButtonModule,
     MatInputModule,
-    FormsModule,
     MatCardModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
